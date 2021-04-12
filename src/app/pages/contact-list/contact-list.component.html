@@ -1,0 +1,27 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "pacman" [fullScreen] = "true">
+  <p style="color: white" > Loading... </p>
+</ngx-spinner>
+
+<div class="container" style="margin-top: 70px;">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Book Name</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bookRecord of bookRecords">
+          <td>{{ bookRecord.ID }}</td>
+          <td>{{ bookRecord.Name }}</td>
+          <td> {{ bookRecord.Category }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="selectBook(bookRecord)"> Details</button> |
+            <button class="btn btn-info btn-sm" (click)="editBook(bookRecord)"> Edit</button> |
+            <button class="btn btn-danger btn-sm" (click)="deleteBook(bookRecord)"> Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
